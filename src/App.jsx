@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import { Typewriter } from 'react-simple-typewriter'
 
+
 function App() {
   const [form, setForm] = useState({
     from: '',
@@ -10,6 +11,7 @@ function App() {
     amount: '',
   });
   const [result,setResult] =useState()
+  const [error,setError]=useState('');
 
   console.log(form.from);
 const getRates=async()=>{
@@ -36,12 +38,13 @@ const getRates=async()=>{
       setResult(response.data.result);
     } catch (error) {
       console.error(error);
+      setError(error);
     }
 
   }
 
   useEffect(() => {
-    getRates()
+    getRates();
   
     
   }, [form.amount])
