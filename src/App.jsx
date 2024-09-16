@@ -20,22 +20,23 @@ const getRates=async()=>{
 
     const options = {
       method: 'GET',
-      url: 'https://currency-conversion-and-exchange-rates.p.rapidapi.com/convert',
+      url: 'https://exchange-rate-api1.p.rapidapi.com/convert',
       params: {
-        from: `${form.from}`,
-        to: `${form.to}`,
-        amount: `${form.amount}`
+        base: `${form.from}`,
+        target: `${form.to}`
       },
       headers: {
         'x-rapidapi-key': 'bb3a1fc2e5mshfa6f258aff35648p14a114jsna7be21ff7af1',
-        'x-rapidapi-host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
+        'x-rapidapi-host': 'exchange-rate-api1.p.rapidapi.com'
       }
     };
     
+    
     try {
       const response = await axios.request(options);
-      console.log(response.data.result);
-      setResult(response.data.result);
+      console.log(response.data.convert_result.rate);
+      setResult(response.data.convert_result.rate);
+      // setResult(response.data);
     } catch (error) {
       console.error(error);
       setError(error);
@@ -97,7 +98,7 @@ const getRates=async()=>{
               />
             </span>
             {/* <button  onClick={getRates()}  className='w-[18rem] h-[3rem] bg-[#00aee6] rounded-[1rem]'>Get Rates</button> */}
-            <h2 className='text-3xl font-myfont ml-[3rem] text-[#fff] result'>{result}</h2>
+            <h2 className='text-3xl font-myfont ml-[3rem] text-[#fff] result'>  {(result * parseFloat(form.amount)).toFixed(2) || ''}</h2>
           </form>
 
         </div>
