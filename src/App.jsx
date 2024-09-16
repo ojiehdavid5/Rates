@@ -27,7 +27,7 @@ const getRates=async()=>{
         amount: `${form.amount}`
       },
       headers: {
-        'x-rapidapi-key': '725fb5b942msh802001ec5ca8863p134943jsnec754daad71f',
+        'x-rapidapi-key': 'bb3a1fc2e5mshfa6f258aff35648p14a114jsna7be21ff7af1',
         'x-rapidapi-host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
       }
     };
