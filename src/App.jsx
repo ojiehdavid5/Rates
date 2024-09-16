@@ -98,7 +98,7 @@ const getRates=async()=>{
               />
             </span>
             {/* <button  onClick={getRates()}  className='w-[18rem] h-[3rem] bg-[#00aee6] rounded-[1rem]'>Get Rates</button> */}
-            <h2 className='text-3xl font-myfont ml-[3rem] text-[#fff] result'>  {(result * parseFloat(form.amount)).toFixed(2) || ''}</h2>
+            <h2 className='text-3xl font-myfont ml-[3rem] text-[#fff] result'>  {(result * parseFloat(form.amount)).toFixed(2) }</h2>
           </form>
 
         </div>
