@@ -6,6 +6,10 @@ import { Typewriter } from 'react-simple-typewriter'
 
 function App() {
   const [form, setForm] = useState({
+    
+    
+    
+    
     from: '',
     to: '',
     amount: '',
